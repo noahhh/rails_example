@@ -1,0 +1,11 @@
+<% @articles.each do |article| %>
+  <div class="article-name">
+    Name: <%= link_to article.title, article_path(article) %>
+    <%= link_to "Comment on this article", new_article_comment_path(article) %>
+    <%= link_to 'Delete', admin_article_path(article), method: :delete %>
+  </div>
+<% end %>
+
+<br>
+<br>
+<%= link_to "Create a new article", new_article_path() %>
